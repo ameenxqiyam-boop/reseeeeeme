@@ -1,0 +1,8 @@
+{
+  "name": "secret-garden",
+  "version": "1.0.0",
+  "description": "An interactive moonlit garden gift for a friend",
+  "scripts": {
+    "dev": "python -m http.server 3000"
+  }
+}

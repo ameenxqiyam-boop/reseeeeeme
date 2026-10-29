@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Little Moonlit Garden</title>
+    <meta name="description" content="A small, handmade garden for a friend who deserves a little magic.">
+    <link rel="stylesheet" href="friendship.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☾</text></svg>">
+</head>
+<body>
+    <div id="app">
+        <!-- INTRO SCENE -->
+        <div id="scene-intro" class="scene active">
+            <div class="intro-decorations">
+                <div class="floating-petal petal-1"></div>
+                <div class="floating-petal petal-2"></div>
+                <div class="floating-petal petal-3"></div>
+                <div class="floating-sparkle sparkle-1"></div>
+                <div class="floating-sparkle sparkle-2"></div>
+                <div class="moon"></div>
+            </div>
+            <div class="intro-content">
+                <p class="intro-kicker">A little gift, sent across the miles</p>
+                <h1 class="intro-line-1">A little moonlit<br><em>magic for you</em></h1>
+                <h2 class="intro-line-2">For a friend in North Carolina who loves plushies, purple skies, and tiny flowers.</h2>
+                <div class="intro-plushie" aria-hidden="true"><span>🧸</span></div>
+                <button id="intro-button" class="intro-button" aria-label="Open the secret garden">
+                    Step into your garden <span aria-hidden="true">↗</span>
+                </button>
+                <p class="intro-signoff">made with care, from your friend on the other side of the screen</p>
+            </div>
+        </div>
+
+        <!-- FLOWER GARDEN SCENE -->
+        <div id="scene-garden" class="scene">
+            <div class="garden-decorations">
+                <div class="floating-petal petal-4"></div>
+                <div class="floating-petal petal-5"></div>
+                <div class="floating-sparkle sparkle-3"></div>
+            </div>
+            <div class="garden-content">
+                <p class="scene-kicker">A quiet little patch, just for you</p>
+                <h2 class="garden-title">Follow the tiny bells</h2>
+                <p class="scene-instructions">Find all five lily-of-the-valley blooms tucked into the garden.</p>
+                <div class="flower-container">
+                    <div class="flower flower-1" data-flower="1" role="button" tabindex="0" aria-label="Click to find a secret">
+                        <div class="flower-stem"></div>
+                        <div class="flower-petals"></div>
+                        <div class="flower-center"></div>
+                    </div>
+                    <div class="flower flower-2" data-flower="2" role="button" tabindex="0" aria-label="Click to find a secret">
+                        <div class="flower-stem"></div>
+                        <div class="flower-petals"></div>
+                        <div class="flower-center"></div>
+                    </div>
+                    <div class="flower flower-3" data-flower="3" role="button" tabindex="0" aria-label="Click to find a secret">
+                        <div class="flower-stem"></div>
+                        <div class="flower-petals"></div>
+                        <div class="flower-center"></div>
+                    </div>
+                    <div class="flower flower-4" data-flower="4" role="button" tabindex="0" aria-label="Click to find a secret">
+                        <div class="flower-stem"></div>
+                        <div class="flower-petals"></div>
+                        <div class="flower-center"></div>
+                    </div>
+                    <div class="flower flower-5" data-flower="5" role="button" tabindex="0" aria-label="Click to find a secret">
+                        <div class="flower-stem"></div>
+                        <div class="flower-petals"></div>
+                        <div class="flower-center"></div>
+                    </div>
+                </div>
+                <p class="flower-progress" aria-live="polite">0 of 5 blooms</p>
+                <div id="flower-message" class="flower-message"></div>
+                <button id="garden-continue" class="continue-button hidden" aria-label="Continue to the envelope">
+                    Read your little note <span aria-hidden="true">→</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- ENVELOPE SCENE -->
+        <div id="scene-envelope" class="scene">
+            <div class="envelope-content">
+                <p class="scene-kicker">A note from my corner of the internet</p>
+                <h2 class="envelope-title">A little something for you</h2>
+                <div class="envelope-container">
+                    <div id="envelope" class="envelope" role="button" tabindex="0" aria-label="Open your letter">
+                        <div class="envelope-flap"></div>
+                        <div class="envelope-body">
+                            <div class="envelope-creases"></div>
+                        </div>
+                        <div id="letter" class="letter">
+                            <div class="letter-content">
+                                <p id="letter-text"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button id="envelope-continue" class="continue-button hidden" aria-label="Continue to the plushie hunt">
+                    Meet the plushie patrol <span aria-hidden="true">→</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- PLUSHIE HUNT SCENE -->
+        <div id="scene-hearts" class="scene">
+            <div class="hearts-decorations">
+                <div class="lily-flower lily-1"></div>
+                <div class="lily-flower lily-2"></div>
+                <div class="lily-flower lily-3"></div>
+                <div class="ribbon ribbon-1"></div>
+                <div class="ribbon ribbon-2"></div>
+            </div>
+            <div class="hearts-content">
+                <p class="scene-kicker">A very important plushie mission</p>
+                <h2 class="hearts-title">Can you find the plushie patrol?</h2>
+                <p class="scene-instructions">There are five little friends hiding around the garden.</p>
+                <div class="hearts-progress" aria-live="polite">0 of 5 plushies</div>
+                <div class="hearts-container">
+                    <div class="hidden-heart heart-1" data-heart="1" role="button" tabindex="0" aria-label="Find plushie one"></div>
+                    <div class="hidden-heart heart-2" data-heart="2" role="button" tabindex="0" aria-label="Find plushie two"></div>
+                    <div class="hidden-heart heart-3" data-heart="3" role="button" tabindex="0" aria-label="Find plushie three"></div>
+                    <div class="hidden-heart heart-4" data-heart="4" role="button" tabindex="0" aria-label="Find plushie four"></div>
+                    <div class="hidden-heart heart-5" data-heart="5" role="button" tabindex="0" aria-label="Find plushie five"></div>
+                </div>
+                <button id="hearts-continue" class="continue-button hidden" aria-label="Continue to the final surprise">
+                    One last little note <span aria-hidden="true">→</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- FINAL SURPRISE SCENE -->
+        <div id="scene-final" class="scene">
+            <div id="final-particles" class="final-particles"></div>
+            <div class="final-content">
+                <p class="final-line-1">One last little thing...</p>
+                <p class="final-line-2">I'm really glad we met, even from miles away.</p>
+                <p class="final-line-3">Keep this tiny garden</p>
+                <p class="final-line-4">for a day that could use a little softness.</p>
+                <p class="final-line-5">Made especially for you, with care. 💜</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
